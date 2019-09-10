@@ -10,16 +10,25 @@ import android.widget.CheckBox;
 
 public class MainActivity extends AppCompatActivity {
     Button btnNhap;
-
+    Button btnThoat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         btnNhap = findViewById(R.id.bottom);
-        //btnThoat = (Button)findViewById(R.id.button2);
+        btnThoat = findViewById(R.id.button2);
 
         final CheckBox checkBox = findViewById(R.id.checkBox);
+        btnThoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder buider = new AlertDialog.Builder(view.getContext());
+                buider.setMessage("Bạn có muốn thoát không ?");
+                buider.setTitle("Thông báo");
+                
+            }
+        });
         btnNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
+
         });
 
     }
